@@ -90,7 +90,7 @@
                 <h1 class="text-5xl sm:text-6xl md:text-8xl font-black leading-tight marudhara-title" data-key="hero-main">मरुधरा के मोती</h1>
                 <p class="text-xl sm:text-2xl md:text-3xl opacity-80 leading-relaxed" data-key="hero-sub">साहित्यिक विरासत और राजस्थान का शिल्प वैभव - श्रीमती पुष्पा गोस्वामी</p>
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <button onclick="document.getElementById('passcodeModal').style.display='flex'" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold shadow-lg transition transform hover:-translate-y-1" data-key="btn-book">संपूर्ण पुस्तक पढ़ें</button>
+                    <button type="button" onclick="document.getElementById('passcodeModal').style.display='flex'" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold shadow-lg transition transform hover:-translate-y-1" data-key="btn-book">संपूर्ण पुस्तक पढ़ें</button>
                     <a href="#biography" class="glass px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition text-blue-500" data-key="btn-bio">जीवन परिचय</a>
                 </div>
             </div>
@@ -165,7 +165,7 @@
                     <p class="text-lg sm:text-xl opacity-60 italic mb-8">राजस्थान के गौरवशाली हस्तशिल्प और मरुभूमि के अनमोल व्यक्तित्वों का संकलन।</p>
                     <img src="./Pushpa2.jpg" class="w-full h-48 rounded-2xl object-cover mb-8 shadow-lg" alt="Book Cover Image">
                 </div>
-                <button onclick="document.getElementById('passcodeModal').style.display='flex'" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-3xl font-black text-xl text-center shadow-xl transition active:scale-95" data-key="btn-book">Read full Book</button>
+                <button type="button" onclick="document.getElementById('passcodeModal').style.display='flex'" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-3xl font-black text-xl text-center shadow-xl transition active:scale-95" data-key="btn-book">Read full Book</button>
             </div>
         </div>
     </section>
@@ -176,7 +176,6 @@
             <h2 class="text-4xl sm:text-5xl font-bold marudhara-title" data-key="gallery-title">Nostalgia</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Adjusted exactly to the files present in your screenshot -->
             <img src="./Pushpa3.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
             <img src="./Pushpa4.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
             <img src="./Pushpa5.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
@@ -186,7 +185,6 @@
             <img src="./Pushpa10.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
             <img src="./Pushpa11.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
             <img src="./Pushpa12.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
-            <img src="./Guzrahuazamana.jpeg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
         </div>
     </section>
 
@@ -214,24 +212,40 @@
     <!-- FLOATING CONTACT HUB -->
     <div id="contactHub" class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-[100] flex flex-col items-end gap-6">
         <div id="hubContent" class="flex flex-col gap-4 max-w-[calc(100vw-3rem)]">
+            <!-- Daughter Card -->
             <div class="glass p-6 rounded-[2.5rem] w-72 sm:w-80 shadow-2xl border-r-8 border-blue-500 flex flex-col gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white"><i class="fas fa-female"></i></div>
-                    <span class="font-black text-lg sm:text-xl italic text-blue-500">Loving Daughter</span>
+                    <div class="flex flex-col">
+                        <span class="font-black text-lg sm:text-xl italic text-blue-500">Pallavi Goswami</span>
+                        <span class="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase">Loving Daughter</span>
+                    </div>
                 </div>
                 <div class="flex gap-3">
-                    <a href="tel:+919324251598" class="bg-blue-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-blue-700 transition"><i class="fas fa-phone"></i></a>
-                    <a href="https://wa.me/919324251598" target="_blank" class="bg-green-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-green-700 transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                    <a href="tel:+919325251598" class="bg-blue-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-blue-700 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-phone"></i> <span class="font-bold">Call</span>
+                    </a>
+                    <a href="https://wa.me/919325251598" target="_blank" class="bg-green-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-green-700 transition flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i> <span class="font-bold">WhatsApp</span>
+                    </a>
                 </div>
             </div>
+            <!-- Son Card -->
             <div class="glass p-6 rounded-[2.5rem] w-72 sm:w-80 shadow-2xl border-r-8 border-blue-900 flex flex-col gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center text-white"><i class="fas fa-male"></i></div>
-                    <span class="font-black text-lg sm:text-xl italic text-blue-400">Loving Son</span>
+                    <div class="flex flex-col">
+                        <span class="font-black text-lg sm:text-xl italic text-blue-400">Kartikey Sharma</span>
+                        <span class="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase">Loving Son</span>
+                    </div>
                 </div>
                 <div class="flex gap-3">
-                    <a href="tel:+918560000080" class="bg-blue-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-blue-700 transition"><i class="fas fa-phone"></i></a>
-                    <a href="https://wa.me/918560000080" target="_blank" class="bg-green-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-green-700 transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                    <a href="tel:+919549999916" class="bg-blue-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-blue-700 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-phone"></i> <span class="font-bold">Call</span>
+                    </a>
+                    <a href="https://wa.me/919549999916" target="_blank" class="bg-green-600 flex-1 py-4 rounded-2xl text-center text-white hover:bg-green-700 transition flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i> <span class="font-bold">WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -248,7 +262,7 @@
             <h3 class="text-3xl font-black mb-4" data-key="verify-title">Enter Passcode</h3>
             <p class="opacity-70 mb-8 italic" data-key="verify-sub">Please enter the 4-digit code to read the book.</p>
             <input type="password" id="verifyCode" maxlength="4" placeholder="••••" class="w-full bg-slate-100 dark:bg-slate-900 text-center text-5xl tracking-[0.5em] py-6 rounded-3xl border border-blue-500/30 outline-none focus:ring-2 focus:ring-blue-500 mb-8 font-black" />
-            <button onclick="grantAccess()" class="w-full bg-green-600 hover:bg-green-700 text-white py-5 rounded-3xl font-black text-xl" data-key="verify-btn">Unlock</button>
+            <button type="button" onclick="grantAccess()" class="w-full bg-green-600 hover:bg-green-700 text-white py-5 rounded-3xl font-black text-xl" data-key="verify-btn">Unlock</button>
         </div>
     </div>
 
@@ -258,8 +272,8 @@
             <h3 class="font-bold text-xl marudhara-title">मरुधरा के मोती</h3>
             <button onclick="document.getElementById('bookViewerModal').style.display='none'" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold">Close X</button>
         </div>
-        <!-- Note: Adding #toolbar=0 to the end of the PDF src hides the browser's download/print bar -->
-        <iframe src="./book.pdf#toolbar=0" class="w-full flex-grow border-none bg-white"></iframe>
+        <!-- Google Drive Embed -->
+        <iframe src="https://drive.google.com/file/d/1R5ilLU2vfQmFFJ41bbHJ_qKd229kpRsS/preview" class="w-full flex-grow border-none bg-white"></iframe>
     </div>
 
     <script>
