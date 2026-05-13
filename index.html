@@ -47,30 +47,26 @@
         .light nav.scrolled { background: rgba(255, 255, 255, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     </style>
 </head>
-<!-- Changed default theme to 'light' -->
 <body class="light overflow-x-hidden min-h-screen">
 
     <!-- NAVIGATION -->
     <nav id="navbar" class="fixed top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center glass">
         <div class="text-2xl md:text-3xl font-bold marudhara-title whitespace-nowrap" data-key="nav-brand">पुष्पा गोस्वामी</div>
         
-        <!-- Desktop Links -->
         <div class="hidden lg:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest">
-            <a href="#home" class="hover:text-blue-500 transition" data-key="link-home">Home</a>
+            <a href="#home" class="hover:text-blue-500 transition" data-key="link-home">About Her</a>
             <a href="#biography" class="hover:text-blue-500 transition" data-key="link-bio">Biography</a>
             <a href="#book" class="hover:text-blue-500 transition" data-key="link-book">The Book</a>
-            <a href="#gallery" class="hover:text-blue-500 transition" data-key="link-gallery">Gallery</a>
+            <a href="#gallery" class="hover:text-blue-500 transition" data-key="link-gallery">Nostalgia</a>
             <a href="#family" class="hover:text-blue-500 transition" data-key="link-family">Family</a>
         </div>
 
         <div class="flex items-center gap-4">
-            <!-- Theme Toggle: Default icon is moon since theme starts light -->
             <button onclick="toggleTheme()" class="w-10 h-10 rounded-full flex items-center justify-center glass hover:scale-110 transition text-blue-500">
                 <i id="themeIcon" class="fas fa-moon"></i>
             </button>
             <button onclick="toggleLanguage()" id="langBtn" class="text-sm font-bold border-b-2 border-blue-500 px-2 py-1 uppercase text-blue-500">English</button>
             
-            <!-- Mobile Menu Toggle Button -->
             <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center glass text-blue-500 hover:scale-110 transition">
                 <i class="fas fa-bars"></i>
             </button>
@@ -79,10 +75,10 @@
 
     <!-- Mobile Menu Dropdown -->
     <div id="mobileMenu" class="hidden lg:hidden fixed top-24 left-6 right-6 glass p-6 rounded-3xl flex-col gap-6 z-40 shadow-2xl border-t-4 border-blue-500">
-        <a href="#home" onclick="toggleMobileMenu()" class="text-xl font-bold hover:text-blue-500 transition" data-key="link-home">Home</a>
+        <a href="#home" onclick="toggleMobileMenu()" class="text-xl font-bold hover:text-blue-500 transition" data-key="link-home">About Her</a>
         <a href="#biography" onclick="toggleMobileMenu()" class="text-xl font-bold hover:text-blue-500 transition" data-key="link-bio">Biography</a>
         <a href="#book" onclick="toggleMobileMenu()" class="text-xl font-bold hover:text-blue-500 transition" data-key="link-book">The Book</a>
-        <a href="#gallery" onclick="toggleMobileMenu()" class="text-xl font-bold hover:text-blue-500 transition" data-key="link-gallery">Gallery</a>
+        <a href="#gallery" onclick="toggleMobileMenu()" class="text-xl font-bold hover:text-blue-500 transition" data-key="link-gallery">Nostalgia</a>
         <a href="#family" onclick="toggleMobileMenu()" class="text-xl font-bold hover:text-blue-500 transition" data-key="link-family">Family</a>
     </div>
 
@@ -94,14 +90,15 @@
                 <h1 class="text-5xl sm:text-6xl md:text-8xl font-black leading-tight marudhara-title" data-key="hero-main">मरुधरा के मोती</h1>
                 <p class="text-xl sm:text-2xl md:text-3xl opacity-80 leading-relaxed" data-key="hero-sub">साहित्यिक विरासत और राजस्थान का शिल्प वैभव - श्रीमती पुष्पा गोस्वामी</p>
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="./book.pdf" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold shadow-lg transition transform hover:-translate-y-1" data-key="btn-book">संपूर्ण पुस्तक पढ़ें</a>
+                    <button onclick="document.getElementById('passcodeModal').style.display='flex'" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold shadow-lg transition transform hover:-translate-y-1" data-key="btn-book">संपूर्ण पुस्तक पढ़ें</button>
                     <a href="#biography" class="glass px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition text-blue-500" data-key="btn-bio">जीवन परिचय</a>
                 </div>
             </div>
             <div class="relative group">
                 <div class="absolute -inset-4 bg-blue-600/20 rounded-[4rem] blur-3xl"></div>
                 <div class="relative rounded-[3.5rem] overflow-hidden shadow-2xl border border-blue-500/20 bg-black aspect-video">
-                    <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <!-- Added poster image so the player is not black even if the video is missing/buffering -->
+                    <video autoplay muted loop playsinline poster="./Pushpa1.jpg" class="w-full h-full object-cover">
                         <source src="./video.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -113,7 +110,6 @@
     <section id="biography" class="py-32 px-6 bg-blue-900/5">
         <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-4 space-y-6">
-                <!-- Explicit relative paths applied to all images -->
                 <img src="./Pushpa1.jpg" class="rounded-[3rem] shadow-2xl border-4 border-blue-500/20 w-full" alt="Portrait">
                 <div class="glass p-8 rounded-3xl text-center border-t-4 border-blue-500 shadow-xl">
                     <div class="text-blue-500 font-bold text-3xl" data-key="bio-rank">Assistant Director</div>
@@ -169,28 +165,28 @@
                     <p class="text-lg sm:text-xl opacity-60 italic mb-8">राजस्थान के गौरवशाली हस्तशिल्प और मरुभूमि के अनमोल व्यक्तित्वों का संकलन।</p>
                     <img src="./Pushpa2.jpg" class="w-full h-48 rounded-2xl object-cover mb-8 shadow-lg" alt="Book Cover Image">
                 </div>
-                <a href="./book.pdf" target="_blank" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-3xl font-black text-xl text-center shadow-xl transition active:scale-95" data-key="btn-book">अनलॉक पुस्तक पढ़ें</a>
+                <button onclick="document.getElementById('passcodeModal').style.display='flex'" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-3xl font-black text-xl text-center shadow-xl transition active:scale-95" data-key="btn-book">Read full Book</button>
             </div>
         </div>
     </section>
 
-    <!-- PHOTO GALLERY SECTION -->
+    <!-- NOSTALGIA / GALLERY SECTION -->
     <section id="gallery" class="py-32 px-6 container mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-4xl sm:text-5xl font-bold marudhara-title" data-key="gallery-title">स्मृति वीथिका (Gallery)</h2>
+            <h2 class="text-4xl sm:text-5xl font-bold marudhara-title" data-key="gallery-title">Nostalgia</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <img src="./Pushpa3.jpg" alt="Gallery Image 3" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa4.jpg" alt="Gallery Image 4" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa5.jpg" alt="Gallery Image 5" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa6.jpg" alt="Gallery Image 6" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa7.jpg" alt="Gallery Image 7" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa8.jpg" alt="Gallery Image 8" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa10.jpg" alt="Gallery Image 10" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa11.jpg" alt="Gallery Image 11" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa12.jpg" alt="Gallery Image 12" class="img-card shadow-lg" loading="lazy">
-            <img src="./Pushpa13.JPG" alt="Gallery Image 13" class="img-card shadow-lg" loading="lazy"> <!-- Retained JPG to match your folder -->
-            <img src="./Pushpa14.jpg" alt="Gallery Image 14" class="img-card shadow-lg" loading="lazy">
+            <!-- Adjusted exactly to the files present in your screenshot -->
+            <img src="./Pushpa3.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa4.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa5.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa6.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa7.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa8.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa10.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa11.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Pushpa12.jpg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
+            <img src="./Guzrahuazamana.jpeg" alt="Nostalgia" class="img-card shadow-lg" loading="lazy">
         </div>
     </section>
 
@@ -244,10 +240,32 @@
         </button>
     </div>
 
+    <!-- GATEKEEPER PASSCODE MODAL -->
+    <div id="passcodeModal" style="display:none;" class="fixed inset-0 z-[200] items-center justify-center bg-black/80 p-6 backdrop-blur-xl">
+        <div class="glass max-w-md w-full p-10 rounded-[4rem] relative shadow-2xl text-center border-t-4 border-blue-600 bg-white dark:bg-slate-800">
+            <button onclick="document.getElementById('passcodeModal').style.display='none'" class="absolute top-8 right-8 text-3xl opacity-50 hover:opacity-100">&times;</button>
+            <i class="fas fa-lock text-6xl text-blue-500 mb-8"></i>
+            <h3 class="text-3xl font-black mb-4" data-key="verify-title">Enter Passcode</h3>
+            <p class="opacity-70 mb-8 italic" data-key="verify-sub">Please enter the 4-digit code to read the book.</p>
+            <input type="password" id="verifyCode" maxlength="4" placeholder="••••" class="w-full bg-slate-100 dark:bg-slate-900 text-center text-5xl tracking-[0.5em] py-6 rounded-3xl border border-blue-500/30 outline-none focus:ring-2 focus:ring-blue-500 mb-8 font-black" />
+            <button onclick="grantAccess()" class="w-full bg-green-600 hover:bg-green-700 text-white py-5 rounded-3xl font-black text-xl" data-key="verify-btn">Unlock</button>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN BOOK VIEWER MODAL (Prevents easy downloading) -->
+    <div id="bookViewerModal" style="display:none;" class="fixed inset-0 z-[300] bg-black flex-col">
+        <div class="flex justify-between items-center p-4 bg-slate-900 text-white shadow-xl">
+            <h3 class="font-bold text-xl marudhara-title">मरुधरा के मोती</h3>
+            <button onclick="document.getElementById('bookViewerModal').style.display='none'" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold">Close X</button>
+        </div>
+        <!-- Note: Adding #toolbar=0 to the end of the PDF src hides the browser's download/print bar -->
+        <iframe src="./book.pdf#toolbar=0" class="w-full flex-grow border-none bg-white"></iframe>
+    </div>
+
     <script>
         const translations = {
-            hi: { "nav-brand": "पुष्पा गोस्वामी", "link-home": "Home", "link-bio": "Biography", "link-book": "The Book", "link-family": "Family", "link-gallery": "Gallery", "hero-tag": "मरुभूमि का साहित्यिक स्वर", "hero-main": "मरुधरा के मोती", "hero-sub": "साहित्यिक विरासत और राजस्थान का शिल्प वैभव - श्रीमती पुष्पा गोस्वामी", "btn-book": "संपूर्ण पुस्तक पढ़ें", "btn-bio": "जीवन परिचय", "bio-title": "जीवन परिचय (Biography)", "bio-rank": "Assistant Director", "bio-dept": "DIPR राजस्थान (से.नि.)", "bio-p1": "श्रीमती पुष्पा गोस्वामी जी राजस्थान की एक प्रख्यात साहित्यकार, संवेदनशील लेखिका और पूर्व प्रशासनिक अधिकारी थीं।", "bio-p2": "उन्होंने मरुधरा की तपती रेत के बीच छिपे उन 'मोतियों' को अपनी लेखनी से तराशा।", "book-title": "मरुधरा के मोती: साहित्यिक यात्रा", "kahani-title": "कहानियां (Audio Stories)", "gallery-title": "स्मृति वीथिका (Gallery)", "family-title": "परिवार (Family)" },
-            en: { "nav-brand": "Pushpa Goswami", "link-home": "Home", "link-bio": "Biography", "link-book": "The Book", "link-family": "Family", "link-gallery": "Gallery", "hero-tag": "Literary Voice of the Desert", "hero-main": "Pearls of Marudhara", "hero-sub": "Literary Legacy & Handicraft Heritage of Rajasthan - Smt. Pushpa Goswami", "btn-book": "Read Full Book", "btn-bio": "View Biography", "bio-title": "Biography", "bio-rank": "Assistant Director", "bio-dept": "DIPR Rajasthan (Retd.)", "bio-p1": "Smt. Pushpa Goswami was a renowned litterateur of Rajasthan, a sensitive writer, and a former administrative officer.", "bio-p2": "She carved those 'pearls' hidden in the sands of Marudhara with her pen.", "book-title": "Marudhara Ke Moti", "kahani-title": "Audio Stories", "gallery-title": "Photo Gallery", "family-title": "Family" }
+            hi: { "nav-brand": "पुष्पा गोस्वामी", "link-home": "उनके बारे में", "link-bio": "Biography", "link-book": "The Book", "link-family": "Family", "link-gallery": "स्मृतियां (Nostalgia)", "hero-tag": "मरुभूमि का साहित्यिक स्वर", "hero-main": "मरुधरा के मोती", "hero-sub": "साहित्यिक विरासत और राजस्थान का शिल्प वैभव - श्रीमती पुष्पा गोस्वामी", "btn-book": "संपूर्ण पुस्तक पढ़ें", "btn-bio": "जीवन परिचय", "bio-title": "जीवन परिचय (Biography)", "bio-rank": "Assistant Director", "bio-dept": "DIPR राजस्थान (से.नि.)", "bio-p1": "श्रीमती पुष्पा गोस्वामी जी राजस्थान की एक प्रख्यात साहित्यकार, संवेदनशील लेखिका और पूर्व प्रशासनिक अधिकारी थीं।", "bio-p2": "उन्होंने मरुधरा की तपती रेत के बीच छिपे उन 'मोतियों' को अपनी लेखनी से तराशा।", "book-title": "मरुधरा के मोती: साहित्यिक यात्रा", "kahani-title": "कहानियां (Audio Stories)", "gallery-title": "स्मृतियां (Nostalgia)", "family-title": "परिवार (Family)", "verify-title": "पासवर्ड दर्ज करें", "verify-sub": "पुस्तक पढ़ने के लिए कृपया 4-अंकीय कोड (2836) दर्ज करें।", "verify-btn": "अनलॉक करें" },
+            en: { "nav-brand": "Pushpa Goswami", "link-home": "About Her", "link-bio": "Biography", "link-book": "The Book", "link-family": "Family", "link-gallery": "Nostalgia", "hero-tag": "Literary Voice of the Desert", "hero-main": "Pearls of Marudhara", "hero-sub": "Literary Legacy & Handicraft Heritage of Rajasthan - Smt. Pushpa Goswami", "btn-book": "Read full Book", "btn-bio": "View Biography", "bio-title": "Biography", "bio-rank": "Assistant Director", "bio-dept": "DIPR Rajasthan (Retd.)", "bio-p1": "Smt. Pushpa Goswami was a renowned litterateur of Rajasthan, a sensitive writer, and a former administrative officer.", "bio-p2": "She carved those 'pearls' hidden in the sands of Marudhara with her pen.", "book-title": "Marudhara Ke Moti", "kahani-title": "Audio Stories", "gallery-title": "Nostalgia", "family-title": "Family", "verify-title": "Enter Passcode", "verify-sub": "Please enter the 4-digit code to read the book.", "verify-btn": "Unlock" }
         };
 
         let currentLang = 'hi';
@@ -266,7 +284,6 @@
             body.classList.toggle('dark');
             body.classList.toggle('light');
             const icon = document.getElementById('themeIcon');
-            // If body has dark class, show sun icon (to toggle light), otherwise show moon
             icon.className = body.classList.contains('dark') ? 'fas fa-sun' : 'fas fa-moon';
         }
 
@@ -274,6 +291,18 @@
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
             menu.classList.toggle('flex');
+        }
+
+        // Logic for Passcode & Book Viewer
+        function grantAccess() {
+            const code = document.getElementById('verifyCode').value;
+            if(code === '2836') {
+                document.getElementById('passcodeModal').style.display = 'none';
+                document.getElementById('bookViewerModal').style.display = 'flex';
+                document.getElementById('verifyCode').value = ''; // clear input
+            } else { 
+                alert(currentLang === 'hi' ? "गलत पासवर्ड! कृपया पुनः प्रयास करें।" : "Incorrect passcode! Please try again."); 
+            }
         }
 
         window.addEventListener('scroll', () => {
